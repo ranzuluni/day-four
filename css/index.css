@@ -52,19 +52,46 @@ main {
   justify-content: center;
   align-items: center;
   font-size: 30px;
-  border-radius: 0.5rem;
+  border-radius: 12px;
+}
+main:hover {
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  grid-area: main;
+  background-color: var(--base-color);
+  background-image: url(../images/car1.jpeg);
+  background-blend-mode: screen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  opacity: 0.7;
+  cursor: pointer;
 }
 #tires {
   grid-area: tires;
   background-color: var(--layover-color);
   background-image: url(../images/car5.webp);
-  background-blend-mode: lighten;
+  background-blend-mode: screen;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 30px;
   color: black;
   border-radius: 0.5rem;
+}
+#tires:hover {
+  grid-area: tires;
+  background-color: var(--layover-color);
+  background-image: url(../images/car5.webp);
+  background-blend-mode: darken;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  opacity: 0.8;
+  cursor: pointer;
+  color: white;
 }
 #mufflers {
   grid-area: mufflers;
@@ -78,20 +105,71 @@ main {
   font-size: 30px;
   border-radius: 0.5rem;
 }
-.wheels {
-  grid-area: wheels;
-  background-color: var(--secondary-color);
-  background-image: url(../images/car4.jpeg);
+#mufflers:hover {
+  grid-area: mufflers;
+  background-color: var(--layover-color);
+  background-image: url(../images/muffler.jpg);
   background-blend-mode: darken;
   display: flex;
-  background-size: cover;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
-  border-radius: 0.5rem;
+  font-size: 50px;
+  opacity: 0.5;
+  cursor: pointer;
+  color: white;
+}
+.wheels {
+  grid-area: wheels;
+  background-color: var(--base-color);
+  background-image: url(../images/wheels2.jpeg);
+  background-blend-mode: screen;
+  background-size: cover;
+  color: black;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+}
+
+.wheels:hover {
+  grid-area: wheels;
+  background-color: var(--action-color);
+  background-image: url(../images/wheels2.jpeg);
+  background-blend-mode: lighten;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  opacity: 0.8;
+  cursor: pointer;
 }
 footer {
   grid-area: footer;
-  background-color: var(--action-color);
+  background-color: var(--secondary-color);
   border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 580px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 2.2fr 2.2fr 1.2fr 1.2fr 1.2fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "wheels"
+      "tires"
+      "mufflers"
+      "footer";
+  }
 }
