@@ -1,0 +1,97 @@
+:root {
+  --base-color: #171717;
+  --secondary-color: #a1460e;
+  --action-color: #cc6d3d;
+  --layover-color: #d2e1f36c;
+}
+body {
+  margin: 0;
+  height: 150vh;
+  background-color: black;
+}
+.grid-container {
+  display: grid;
+  height: 145vh;
+  grid-template-columns: 1fr 1.2fr 1.5fr;
+  grid-template-rows: 1fr 4fr 3fr 2fr;
+  gap: 0.5rem;
+  color: white;
+  border-radius: 0.5rem;
+  grid-template-areas:
+    "main main header"
+    "main main wheels"
+    "tires mufflers wheels"
+    "footer footer wheels";
+}
+header {
+  grid-area: header;
+  background-color: var(--action-color);
+  background-image: url(../images/harley.jpg);
+  background-blend-mode: screen;
+  border-radius: 0.5rem;
+}
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+li {
+  color: white;
+}
+
+main {
+  grid-area: main;
+  background-color: var(--base-color);
+  background-image: url(../images/car1.jpeg);
+  background-blend-mode: lighten;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-radius: 0.5rem;
+}
+#tires {
+  grid-area: tires;
+  background-color: var(--layover-color);
+  background-image: url(../images/car5.webp);
+  background-blend-mode: lighten;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: black;
+  border-radius: 0.5rem;
+}
+#mufflers {
+  grid-area: mufflers;
+  background-color: var(--layover-color);
+  background-image: url(../images/muffler.jpg);
+  background-blend-mode: lighten;
+  display: flex;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-radius: 0.5rem;
+}
+.wheels {
+  grid-area: wheels;
+  background-color: var(--secondary-color);
+  background-image: url(../images/car4.jpeg);
+  background-blend-mode: darken;
+  display: flex;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-radius: 0.5rem;
+}
+footer {
+  grid-area: footer;
+  background-color: var(--action-color);
+  border-radius: 0.5rem;
+}
